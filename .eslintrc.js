@@ -7,7 +7,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'prettier',
-        'prettier/react',
+        'eslint-config-prettier',
     ],
     parser: 'babel-eslint',
 
@@ -18,15 +18,22 @@ module.exports = {
         ecmaVersion: 12,
         sourceType: 'module',
     },
-    plugins: ['react', 'jsx-a11y', 'import', 'react-hooks', 'prettier'],
+    plugins: [
+        'react',
+        'jsx-a11y',
+        'import',
+        'react-hooks',
+        'prettier',
+        'eslint-plugin-prettier',
+    ],
     rules: {
-        'prettier/prettier': 'error',
+        'prettier/prettier': ['error'],
         'react/jsx-filename-extension': [
             'error',
             { extensions: ['.jsx', '.js'] },
         ],
         'import/prefer-default-export': 'off',
-        'no unused-vars': ['error', { argsIgnorePattern: '^_' }],
+        'no unused-vars': 'off',
         'react/jsx-one-expression-per-line': 'off',
         'global-require': 'off',
         'react-native/no-raw-text': 'off',
@@ -36,5 +43,6 @@ module.exports = {
         'no-console': ['error', { allow: ['tron'] }],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
+        'react/jsx-props-no-spreading': 'off',
     },
 };

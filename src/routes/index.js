@@ -1,20 +1,25 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes as Switch, Route } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
 
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 
 import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
+import GuestRoute from './GuestRoute';
 
 export default function Routes() {
     return (
         <Switch>
-            <Route path="/" exact component={SignIn} />
-            <Route path="/register" component={SignUp} />
-
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/profile" component={Profile} />
+            <Route element={<GuestRoute />}>
+                <Route path="/" exact element={<SignIn />} />
+                <Route path="/register" element={<SignUp />} />
+            </Route>
+            <Route element={<PrivateRoute />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/profile" element={<Profile />} />
+            </Route>
         </Switch>
     );
 }
