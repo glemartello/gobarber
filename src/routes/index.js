@@ -2,11 +2,11 @@ import React from 'react';
 import { Routes as Switch, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 
-import SignIn from '../pages/SignIn';
-import SignUp from '../pages/SignUp';
+import SignIn from '~/pages/SignIn';
+import SignUp from '~/pages/SignUp';
 
-import Dashboard from '../pages/Dashboard';
-import Profile from '../pages/Profile';
+import Dashboard from '~/pages/Dashboard';
+import Profile from '~/pages/Profile';
 import GuestRoute from './GuestRoute';
 
 export default function Routes() {
