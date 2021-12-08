@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 import DefaultLayout from '~/pages/_layouts/default';
 
-import store from '~/store';
+import { store } from '~/store';
 
 export default function PrivateRoute() {
     const { signed } = store.getState().auth;

@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 import AuthLayout from '~/pages/_layouts/auth';
 
-import store from '~/store';
+import { store } from '~/store';
 
 export default function GuestRoute() {
     const { signed } = store.getState().auth;
