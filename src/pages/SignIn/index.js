@@ -19,9 +19,9 @@ export default function SignIn() {
     const dispach = useDispatch();
     const loading = useSelector((state) => state.auth.loading);
 
-    function handleSubmit({ email, password }) {
+    const handleSubmit = ({ email, password }) => {
         dispach(signInRequest(email, password));
-    }
+    };
 
     return (
         <>
