@@ -28,7 +28,7 @@ export default function Header() {
                         </div>
                         <img
                             src={
-                                profile.avatar.url ||
+                                profile.avatar ||
                                 'https://avatars.dicebear.com/api/big-smile/glendamartello.svg'
                             }
                             alt="Glenda Martello"
