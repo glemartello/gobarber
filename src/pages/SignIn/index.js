@@ -36,7 +36,7 @@ export default function SignIn() {
                 />
 
                 <button type="submit">
-                    {loading ? 'Carreagando...' : 'Acessar'}
+                    {loading ? 'Carregando...' : 'Acessar'}
                 </button>
                 <Link to="/register">Criar conta</Link>
             </Form>

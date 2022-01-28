@@ -27,11 +27,8 @@ export default function Header() {
                             <Link to="/profile">Meu perfil</Link>
                         </div>
                         <img
-                            src={
-                                profile.avatar ||
-                                'https://avatars.dicebear.com/api/big-smile/glendamartello.svg'
-                            }
-                            alt="Glenda Martello"
+                            src="https://avatars.dicebear.com/api/big-smile/glendamartello.svg"
+                            alt="jpg"
                         />
                     </Profile>
                 </aside>

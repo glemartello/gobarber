@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useMemo, useEffect } from 'react';
 import {
     format,
@@ -6,6 +7,7 @@ import {
     setHours,
     setMinutes,
     setSeconds,
+    setMilliseconds,
     isBefore,
     isEqual,
     parseISO,
@@ -32,17 +34,20 @@ export default function Dashboard() {
     useEffect(() => {
         async function loadSchedule() {
             const response = await api.get('schedule', {
-                params: { date },
+                params: { date: format(date, 'yyyy-MM-dd') },
             });
 
             const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
             const data = range.map((hour) => {
-                const checkDate = setSeconds(
-                    setMinutes(setHours(date, hour), 0),
+                const checkDate = setMilliseconds(
+                    setSeconds(setMinutes(setHours(date, hour), 0), 0),
                     0
                 );
                 const compareDate = utcToZonedTime(checkDate, timezone);
+
+                console.log(compareDate);
+                console.log(response.data?.[0]?.date);
 
                 return {
                     time: `${hour}:00h`,
